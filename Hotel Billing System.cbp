@@ -1,0 +1,144 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int ch=0,l=1,item=0,gtot=0,cash=0;
+
+    int sstot=0,dstot=0,tstot=0;//sub totel
+
+    int A,x;
+
+    printf("WELCOME TO HOTEL\n");
+
+while(l)
+ {
+
+    printf("\n Menu \n");
+    printf("1 Samosa 20/-\n");
+    printf("2 Dosa 30/-\n");
+    printf("3 Tea 10/-\n");
+    printf("0 Exit\n");
+    printf("Enter your choice:");
+    scanf("%d",&ch);
+    switch(ch)
+        {
+        case 1:
+            //printf("Samosa");
+            printf("Enter no of plates:");
+            scanf("%d",&item);
+            sstot+=20*item;
+
+
+        break;
+        case 2:
+           // printf("Dosa");
+            printf("Enter no of plates:");
+            scanf("%d",&item);
+            dstot+=30*item;
+
+        break;
+        case 3:
+           // printf("Tea");
+            printf("Enter no of Cups:");
+            scanf("%d",&item);
+            tstot+=10*item;
+
+        break;
+        case 0:
+            gtot=sstot+dstot+tstot;
+            printf("Sr.\t Item\t Qty\t Rate\t Subtot\n");
+            printf("1.\t Samosa\t %d\t 20\t %d\n",sstot/20,sstot);
+            printf("2.\t Dosa\t %d\t 30\t %d\n",dstot/30,dstot);
+            printf("3.\t Tea\t %d\t 10\t %d\n",tstot/10,tstot);
+            printf("--------------------------------------------\n");
+            printf("Grand Total = %d\n",gtot);
+
+
+
+             printf("Enter your Cash:");
+             scanf("%d",&cash);
+
+
+
+
+
+             //case 1
+             if((cash>gtot)&&(cash==gtot))
+             {
+                 cash-=gtot;
+                printf("\nReturn=%d\n",cash);
+
+                A=(cash/200);
+                cash=(cash%200);
+                if(A>0)
+                printf("\n200 Notes*%d=%d\n",A,200*A);
+                A=(cash/100);
+                cash=(cash%100);
+                if(A>0)
+                printf("\n100 Notes*%d=%d\n",A,100*A);
+                A=(cash/50);
+                cash=(cash%50);
+                if(A>0)
+                printf("\n50 Notes*%d=%d\n",A,50*A);
+                A=(cash/10);
+                cash=(cash%10);
+                if(A>0)
+                printf("\n10 Notes*%d=%d\n",A,10*A);
+                 A=(cash/5);
+                cash=(cash%5);
+                if(A>0)
+                printf("\n5 coin*%d=%d\n",A,5*A);
+
+                printf("\nTHANK YOU!\n");
+            printf("Exit");}
+
+
+
+            //300 200
+           while(gtot>cash)
+             {gtot=gtot-cash;
+             printf("please pay %d Rs. more\n",gtot);//100
+             printf("Re-enter your cash:");
+             scanf("%d",&cash);}
+
+             if(cash>gtot)
+             {
+                cash=cash-gtot;
+                printf("\nReturn=%d\n",cash);
+                A=(cash/200);
+             cash=(cash%200);
+             if(A>0)
+                printf("\n200 Notes*%d=%d\n",A,200*A);
+             A=(cash/100);
+             cash=(cash%100);
+             if(A>0)
+                printf("\n100 Notes*%d=%d\n",A,100*A);
+             A=(cash/50);
+             cash=(cash%50);
+             if(A>0)
+                printf("\n50 Notes*%d=%d\n",A,50*A);
+             A=(cash/10);
+             cash=(cash%10);
+             if(A>0)
+                printf("\n10 Notes*%d=%d\n",A,10*A);
+             A=(cash/5);
+             cash=(cash%5);
+             if(A>0)
+                printf("\n5 coin*%d=%d\n",A,5*A);}
+
+
+
+           printf("\nTHANK YOU!\n");
+            printf("Exit");
+            l=0;
+        break;
+        default :
+            printf("Wrong choice");
+        break;
+        }
+
+
+ }
+    return 0;
+}
