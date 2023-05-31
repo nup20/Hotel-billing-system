@@ -14,6 +14,7 @@ int main()
 while(l)
  {
 
+
     printf("\n Menu \n");
     printf("1 Samosa 20/-\n");
     printf("2 Dosa 30/-\n");
